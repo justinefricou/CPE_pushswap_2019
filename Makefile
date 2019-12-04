@@ -10,6 +10,7 @@ NAME	=	push_swap
 SRC	=	source/main.c\
 		source/error_detection.c\
 		source/lists.c\
+		source/my_getnbr.c\
 		source/sorting.c\
 		source/sa.c\
 		source/ra.c
