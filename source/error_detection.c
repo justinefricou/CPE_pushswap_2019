@@ -5,6 +5,8 @@
 ** pushswap : functions to detect errors
 */
 
+#include "../include/pushswap.h"
+
 int detect_errors(int argc, char **argv)
 {
     if (argc < 2)

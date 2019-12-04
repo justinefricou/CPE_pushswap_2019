@@ -8,6 +8,8 @@
 #ifndef DEF_PUSHSWAP
 #define DEF_PUSHSWAP
 
+#include <stddef.h>
+
 typedef struct list {
     struct list *previous;
     struct list *next;
