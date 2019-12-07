@@ -8,7 +8,7 @@
 #ifndef DEF_PUSHSWAP
 #define DEF_PUSHSWAP
 
-#include <stddef.h>
+#include <stdlib.h>
 
 int detect_errors(int argc, char **argv);
 int is_int(char *str);

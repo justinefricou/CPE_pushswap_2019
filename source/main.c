@@ -16,5 +16,8 @@ int main(int argc, char **argv)
     if (get_list(&list, argc, argv) == 84)
         return (84);
     display_sorting(list);
+    for (int i = 0; i < argc - 1 ; i++)
+        free(list[i]);
+    free(list);
     return (0);
 }
