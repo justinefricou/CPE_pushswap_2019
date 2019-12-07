@@ -25,13 +25,12 @@ void pushswap_sa(int *list, int length_list)
 void pushswap_ra(int *list, int length_list)
 {
     int nbr = 0;
-    int i = 0;
 
     write(1, "ra", 2);
     if (length_list > 1) {
         nbr = list[0];
-        for ( ; i < length_list; i++)
+        for (int i = 0; i < length_list - 1; i++)
             list[i] = list[i + 1];
-        list[i] = nbr;
+        list[length_list - 1] = nbr;
     }
 }
