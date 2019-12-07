@@ -1,0 +1,33 @@
+/*
+** EPITECH PROJECT, 2019
+** test_pushswap_sa.c
+** File description:
+** pushswap : tests for function pushswap_sa
+*/
+
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include "../include/pushswap.h"
+
+Test(pushswap_sa, several_nbrs_in_list, .init=cr_redirect_stdout)
+{
+    int actual1[3] = {0, 1, 4};
+    int actual2[2] = {0, 1};
+    int expected1[3] = {1, 0, 4};
+    int expected2[2] = {1, 0};
+
+    pushswap_sa(actual1, 3);
+    pushswap_sa(actual2, 2);
+    cr_assert_arr_eq(actual1, expected1, 3);
+    cr_assert_arr_eq(actual2, expected2, 2);
+    cr_expect_stdout_eq_str("sasa");
+}
+
+Test(pushswap_sa, one_nbr_in_list, .init=cr_redirect_stdout)
+{
+    int actual[1] = {0};
+
+    pushswap_sa(actual, 1);
+    cr_assert_arr_eq(actual, actual, 1);
+    cr_expect_stdout_eq_str("sa");
+}
