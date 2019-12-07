@@ -19,7 +19,10 @@ int is_digit(char c);
 int get_list(int **list, int argc, char **argv);
 int my_getnbr(char *str);
 
-void display_sorting(int *list, int length_list);
+int display_sorting(int *list, int length_list);
+int is_sorted(int *list, int length_list);
+void go_through_list(int *list, int length_list);
+
 void pushswap_sa(int *list, int length_list);
 void pushswap_ra(int *list, int length_list);
 
