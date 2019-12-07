@@ -15,6 +15,7 @@ int detect_errors(int argc, char **argv)
         if (!is_int(argv[i]))
             return (84);
     }
+    return (0);
 }
 
 int is_int(char *str)
@@ -23,8 +24,6 @@ int is_int(char *str)
 
     if (is_sign(str[i]))
         i++;
-    else if (!is_digit(str[i]))
-        return (0);
     for ( ; str[i] != 0; i++) {
         if (!is_digit(str[i]))
             return (0);

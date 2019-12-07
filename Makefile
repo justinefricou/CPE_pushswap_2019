@@ -2,24 +2,22 @@
 ## EPITECH PROJECT, 2019
 ## Makefile
 ## File description:
-## A Makefile that compiles cat
+## A Makefile to compile push_swap
 ##
 
 NAME	=	push_swap
 
 SRC	=	source/main.c\
 		source/error_detection.c\
-		#source/lists.c\
-		source/my_getnbr.c\
-		#source/sorting.c\
-		#source/sa.c\
-		#source/ra.c
+		source/my_getnbr.c
 
 OBJ	=	$(SRC:.c=.o)
 
 NAME_TESTS = 	test_push_swap
 
-SRC_TESTS =
+SRC_TESTS =	source/error_detection.c\
+			source/my_getnbr.c\
+			tests/test_detect_errors.c\
 
 OBJ_TESTS	=	$(SRC_TESTS:.c=.o)
 
