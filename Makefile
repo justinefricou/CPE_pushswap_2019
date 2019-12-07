@@ -25,6 +25,7 @@ SRC_TESTS =	source/error_detection.c\
 			tests/test_my_getnbr.c\
 			tests/test_get_list.c\
 			tests/test_is_sorted.c\
+			tests/test_go_through_list.c\
 			tests/test_pushswap_sa.c\
 			tests/test_pushswap_ra.c
 
