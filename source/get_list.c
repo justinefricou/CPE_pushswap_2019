@@ -7,16 +7,14 @@
 
 #include "../include/pushswap.h"
 
-int get_list(int ***list, int argc, char **argv)
+int get_list(int **list, int argc, char **argv)
 {
-    *list = malloc(sizeof(int *) * argc);
+    *list = malloc(sizeof(int) * (argc - 1));
     if (*list == NULL)
         return (84);
     for (int i = 1; i < argc; i++) {
-        (*list)[i - 1] = malloc(sizeof(int));
-        *((*list)[i - 1]) = my_getnbr(argv[i]);
+        (*list)[i - 1] = my_getnbr(argv[i]);
     }
-    (*list)[argc - 1] = NULL;
     return (0);
 }
 

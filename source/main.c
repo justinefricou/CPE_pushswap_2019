@@ -9,15 +9,13 @@
 
 int main(int argc, char **argv)
 {
-    int **list = NULL;
+    int *list = NULL;
 
     if (detect_errors(argc, argv))
         return (84);
     if (get_list(&list, argc, argv) == 84)
         return (84);
-    display_sorting(list);
-    for (int i = 0; i < argc - 1 ; i++)
-        free(list[i]);
+    display_sorting(list, argc - 1);
     free(list);
     return (0);
 }

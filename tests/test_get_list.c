@@ -10,7 +10,7 @@
 
 Test(get_list, one_number)
 {
-    int **list = NULL;
+    int *list = NULL;
     char **argv = NULL;
     char *arg0 = "pushswap";
     char *arg1 = "-00650300";
@@ -19,17 +19,15 @@ Test(get_list, one_number)
     argv[0] = arg0;
     argv[1] = arg1;
     get_list(&list, 2, argv);
-    cr_expect_eq(*(list[0]), -650300);
+    cr_expect_eq(list[0], -650300);
     cr_expect_null(list[1]);
-    for (int i = 0; i < 2; i++)
-        free(list[i]);
     free(list);
     free(argv);
 }
 
 Test(get_list, several_numbers)
 {
-    int **list = NULL;
+    int *list = NULL;
     char **argv = NULL;
     char *arg0 = "pushswap";
     char *arg1 = "-548";
@@ -41,12 +39,10 @@ Test(get_list, several_numbers)
     argv[2] = arg2;
     argv[3] = arg3;
     get_list(&list, 4, argv);
-    cr_expect_eq(*(list[0]), -548);
-    cr_expect_eq(*(list[1]), 0);
-    cr_expect_eq(*(list[2]), 685465);
+    cr_expect_eq(list[0], -548);
+    cr_expect_eq(list[1], 0);
+    cr_expect_eq(list[2], 685465);
     cr_expect_null(list[3]);
-    for (int i = 0; i < 3; i++)
-        free(list[i]);
     free(list);
     free(argv);
 }
