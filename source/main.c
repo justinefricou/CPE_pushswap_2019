@@ -9,12 +9,12 @@
 
 int main(int argc, char **argv)
 {
-    list *l_a = NULL;
+    int **list = NULL;
 
     if (detect_errors(argc, argv))
         return (84);
-    /*if (get_list(l_a, argc, argv) == 84)
+    if (get_list(&list, argc, argv) == 84)
         return (84);
-    display_sorting(l_a);*/
+    display_sorting(list);
     return (0);
 }
