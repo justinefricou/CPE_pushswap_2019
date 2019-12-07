@@ -9,14 +9,6 @@
 #include <criterion/redirect.h>
 #include "../include/pushswap.h"
 
-Test(go_through_list, one_number)
-{
-    int list[1] = {68755};
-
-    go_through_list(list, 1);
-    cr_expect_arr_eq(list, list, 1);
-}
-
 Test(go_through_list, already_sorted_list, .init=cr_redirect_stdout)
 {
     int actual1[2] = {-4, 2};
