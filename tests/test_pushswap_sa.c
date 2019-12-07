@@ -20,7 +20,7 @@ Test(pushswap_sa, several_nbrs_in_list, .init=cr_redirect_stdout)
     pushswap_sa(actual2, 2);
     cr_assert_arr_eq(actual1, expected1, 3);
     cr_assert_arr_eq(actual2, expected2, 2);
-    cr_expect_stdout_eq_str("sasa");
+    cr_expect_stdout_eq_str("sa sa ");
 }
 
 Test(pushswap_sa, one_nbr_in_list, .init=cr_redirect_stdout)
@@ -29,5 +29,5 @@ Test(pushswap_sa, one_nbr_in_list, .init=cr_redirect_stdout)
 
     pushswap_sa(actual, 1);
     cr_assert_arr_eq(actual, actual, 1);
-    cr_expect_stdout_eq_str("sa");
+    cr_expect_stdout_eq_str("sa ");
 }

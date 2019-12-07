@@ -32,7 +32,7 @@ Test(go_through_list, already_sorted_list, .init=cr_redirect_stdout)
     cr_expect_arr_eq(actual2, actual2, 3);
     cr_expect_arr_eq(actual3, actual3, 4);
     cr_expect_arr_eq(actual4, actual4, 5);
-    cr_expect_stdout_eq_str("rara" "rarara" "rararara" "rarararara");
+    cr_expect_stdout_eq_str("ra ra" "ra ra ra" "ra ra ra ra" "ra ra ra ra ra");
 }
 
 Test(go_through_list, not_sorted_list, .init=cr_redirect_stdout)
@@ -54,5 +54,6 @@ Test(go_through_list, not_sorted_list, .init=cr_redirect_stdout)
     cr_expect_arr_eq(actual2, expected2, 3);
     cr_expect_arr_eq(actual3, expected3, 3);
     cr_expect_arr_eq(actual4, expected4, 5);
-    cr_expect_stdout_eq_str("sarara""sararara""sarasarara""sarasararasarara");
+    cr_expect_stdout_eq_str("sa ra ra""sa ra ra ra""sa ra sa ra ra"
+                            "sa ra sa ra ra sa ra ra");
 }

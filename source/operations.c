@@ -13,7 +13,7 @@ void pushswap_sa(int *list, int length_list)
 {
     int nbr = 0;
 
-    write(1, "sa", 2);
+    write(1, "sa ", 3);
     if (length_list > 1) {
         nbr = list[0];
         list[0] = list[1];
