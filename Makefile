@@ -9,15 +9,17 @@ NAME	=	push_swap
 
 SRC	=	source/main.c\
 		source/error_detection.c\
-		source/my_getnbr.c
+		source/get_list.c\
 
 OBJ	=	$(SRC:.c=.o)
 
 NAME_TESTS = 	test_push_swap
 
 SRC_TESTS =	source/error_detection.c\
-			source/my_getnbr.c\
+			source/get_list.c\
 			tests/test_detect_errors.c\
+			tests/test_my_getnbr.c\
+			tests/test_get_list.c
 
 OBJ_TESTS	=	$(SRC_TESTS:.c=.o)
 
