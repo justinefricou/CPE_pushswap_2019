@@ -20,6 +20,7 @@ Test(get_list, one_number)
     argv[1] = arg1;
     get_list(&list, 2, argv);
     cr_expect_eq(*(list[0]), -650300);
+    cr_expect_null(list[1]);
     for (int i = 0; i < 2; i++)
         free(list[i]);
     free(list);
@@ -34,7 +35,6 @@ Test(get_list, several_numbers)
     char *arg1 = "-548";
     char *arg2 = "0";
     char *arg3 = "+685465";
-
     argv = malloc(sizeof(char *) * 4);
     argv[0] = arg0;
     argv[1] = arg1;
@@ -44,6 +44,7 @@ Test(get_list, several_numbers)
     cr_expect_eq(*(list[0]), -548);
     cr_expect_eq(*(list[1]), 0);
     cr_expect_eq(*(list[2]), 685465);
+    cr_expect_null(list[3]);
     for (int i = 0; i < 3; i++)
         free(list[i]);
     free(list);
