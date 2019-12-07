@@ -29,7 +29,7 @@ int is_sorted(int *list, int length_list)
 void go_through_list(int *list, int length_list)
 {
     for (int i = 0; i < length_list; i++) {
-        if (list[0] > list[1])
+        if (i != length_list - 1 && list[0] > list[1])
             pushswap_sa(list, length_list);
         pushswap_ra(list, length_list);
     }
