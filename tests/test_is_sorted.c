@@ -6,9 +6,10 @@
 */
 
 #include <criterion/criterion.h>
+#include <criterion/redirect.h>
 #include "../include/pushswap.h"
 
-Test(is_sorted, sorted_case)
+Test(is_sorted, sorted_case, .init=cr_redirect_stdout)
 {
     int list1[4] = {0, 4, 85, 5604};
     int list2[2] = {456, 457};
@@ -17,6 +18,7 @@ Test(is_sorted, sorted_case)
     cr_expect_eq(is_sorted(list1, 4), 1);
     cr_expect_eq(is_sorted(list2, 2), 1);
     cr_expect_eq(is_sorted(list3, 3), 1);
+    cr_expect_stdout_eq_str("\n\n\n");
 }
 
 Test(is_sorted, not_sorted_case)
@@ -34,9 +36,10 @@ Test(is_sorted, not_sorted_case)
     cr_expect_eq(is_sorted(list5, 5), 0);
 }
 
-Test(is_sorted, one_number_case)
+Test(is_sorted, one_number_case, .init=cr_redirect_stdout)
 {
     int list1[1] = {56};
 
     cr_expect_eq(is_sorted(list1, 1), 1);
+    cr_expect_stdout_eq_str("\n");
 }

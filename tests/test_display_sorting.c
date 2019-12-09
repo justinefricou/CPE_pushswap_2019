@@ -9,15 +9,16 @@
 #include <criterion/redirect.h>
 #include "../include/pushswap.h"
 
-Test(display_sorting, one_number)
+Test(display_sorting, one_number, .init=cr_redirect_stdout)
 {
     int list[1] = {-65};
 
     cr_expect_eq(display_sorting(list, 1), 0);
     cr_expect_arr_eq(list, list, 1);
+    cr_expect_stdout_eq_str("\n");
 }
 
-Test(display_sorting, sorted_list)
+Test(display_sorting, sorted_list, .init=cr_redirect_stdout)
 {
     int actual1[2] = {-65, 32};
     int actual2[3] = {-6, 0, 987};
@@ -29,6 +30,7 @@ Test(display_sorting, sorted_list)
     cr_expect_arr_eq(actual1, actual1, 2);
     cr_expect_arr_eq(actual2, actual2, 3);
     cr_expect_arr_eq(actual3, actual3, 5);
+    cr_expect_stdout_eq_str("\n\n\n");
 }
 
 Test(display_sorting, not_sorted_list, .init=cr_redirect_stdout)
