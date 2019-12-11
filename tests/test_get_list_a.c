@@ -1,14 +1,14 @@
 /*
 ** EPITECH PROJECT, 2019
-** test_get_list.c
+** test_get_list_a.c
 ** File description:
-** pushswap : tests for function get_list
+** pushswap : tests for function get_list_a
 */
 
 #include <criterion/criterion.h>
 #include "../include/pushswap.h"
 
-Test(get_list, one_number)
+Test(get_list_a, one_number)
 {
     int *list = NULL;
     char **argv = NULL;
@@ -18,14 +18,14 @@ Test(get_list, one_number)
     argv = malloc(sizeof(char *) * 2);
     argv[0] = arg0;
     argv[1] = arg1;
-    get_list(&list, 2, argv);
+    get_list_a(&list, 2, argv);
     cr_expect_eq(list[0], -650300);
     cr_expect_null(list[1]);
     free(list);
     free(argv);
 }
 
-Test(get_list, several_numbers)
+Test(get_list_a, several_numbers)
 {
     int *list = NULL;
     char **argv = NULL;
@@ -38,7 +38,7 @@ Test(get_list, several_numbers)
     argv[1] = arg1;
     argv[2] = arg2;
     argv[3] = arg3;
-    get_list(&list, 4, argv);
+    get_list_a(&list, 4, argv);
     cr_expect_eq(list[0], -548);
     cr_expect_eq(list[1], 0);
     cr_expect_eq(list[2], 685465);
