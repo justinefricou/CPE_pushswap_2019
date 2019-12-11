@@ -22,11 +22,16 @@ SRC_TESTS	=	source/error_detection.c\
 				source/display_sorting.c\
 				source/operations.c\
 				tests/test_detect_errors.c\
-				tests/test_my_getnbr.c\
 				tests/test_get_list_a.c\
+				tests/test_my_getnbr.c\
+				tests/test_get_list_b.c\
 				tests/test_display_sorting.c\
 				tests/test_is_sorted.c\
-				tests/test_pushswap_ra.c
+				tests/test_remove_smaller_int.c\
+				tests/test_get_index_smaller_int.c\
+				tests/test_pushswap_ra.c\
+				tests/test_pushswap_pb.c\
+				tests/test_pushswap_pa.c
 
 OBJ_TESTS	=	$(SRC_TESTS:.c=.o)
 
