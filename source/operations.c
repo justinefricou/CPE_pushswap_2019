@@ -37,7 +37,7 @@ void pushswap_pb(int *list_a, int *list_b, int *length_a, int *length_b)
 // Takes the first element from l_b and moves it to the first position on l_a
 void pushswap_pa(int *list_a, int *list_b, int *length_a, int *length_b)
 {
-    write(1, "pa ", 3);
+    write(1, "pa", 2);
     for (int i = (*length_a) - 1; i >= 0; i--)
         list_a[i + 1] = list_a[i];
     list_a[0] = list_b[0];

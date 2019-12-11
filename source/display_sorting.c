@@ -19,7 +19,7 @@ int display_sorting(int *list_a, int *list_b, int length_a)
         remove_smaller_int(list_a, list_b, &length_a, &length_b);
     for ( ; length_b > 0; ) {
         pushswap_pa(list_a, list_b, &length_a, &length_b);
-        if (length_b > 1)
+        if (length_b > 0)
             write(1, " ", 1);
     }
     write(1, "\n", 1);
