@@ -12,7 +12,7 @@ int detect_errors(int argc, char **argv)
     if (argc < 2)
         return (84);
     for (int i = 1; i < argc; i++) {
-        if (!is_int(argv[i]))
+        if (!is_int(argv[i]) && !is_float(argv[i]))
             return (84);
     }
     return (0);
@@ -28,6 +28,24 @@ int is_int(char *str)
         if (!is_digit(str[i]))
             return (0);
     }
+    return (1);
+}
+
+int is_float(char *str)
+{
+    int i = 0;
+
+    if (is_sign(str[i]))
+        i++;
+    else if (!is_digit(str[i]))
+        return (0);
+    for ( ; is_digit(str[i]); i++);
+    if (str[i] != '.')
+        return (0);
+    i++;
+    for ( ; is_digit(str[i]); i++);
+    if (str[i] != 0)
+        return (0);
     return (1);
 }
 

@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv)
 {
-    int *list_1 = NULL, *list_2 = NULL;
+    float *list_1 = NULL, *list_2 = NULL;
     list list_a, list_b;
 
     if (argc == 2 && my_strcmp(argv[1], "-h") == 0) {

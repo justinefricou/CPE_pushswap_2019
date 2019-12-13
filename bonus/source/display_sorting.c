@@ -17,7 +17,7 @@ int display_sorting(list *list_a, list *list_b)
         return (0);
     }
     for ( ; list_a->length > 0; )
-        remove_smaller_int(list_a, list_b, buffer, &length_buffer);
+        remove_smaller_nbr(list_a, list_b, buffer, &length_buffer);
     for ( ; list_b->length > 0; ) {
         pushswap_pa(list_a, list_b);
         add_to_buffer(buffer, "pa", &length_buffer);
@@ -31,7 +31,7 @@ int display_sorting(list *list_a, list *list_b)
     return (0);
 }
 
-int is_sorted(int *list, int length_list)
+int is_sorted(float *list, int length_list)
 {
     for (int i = 0; i < length_list - 1; i++) {
         if (list[i] > list[i + 1])
@@ -40,11 +40,11 @@ int is_sorted(int *list, int length_list)
     return (1);
 }
 
-void remove_smaller_int(list *list_a, list *list_b, char *buffer, int *length)
+void remove_smaller_nbr(list *list_a, list *list_b, char *buffer, int *length)
 {
     int index_smaller_int = 0;
 
-    index_smaller_int = get_index_smaller_int(list_a);
+    index_smaller_int = get_index_smaller_nbr(list_a);
     for (int i = 0; i < index_smaller_int; i++) {
         pushswap_ra(list_a);
         add_to_buffer(buffer, "ra ", length);
@@ -53,7 +53,7 @@ void remove_smaller_int(list *list_a, list *list_b, char *buffer, int *length)
     add_to_buffer(buffer, "pb ", length);
 }
 
-int get_index_smaller_int(list *list_a)
+int get_index_smaller_nbr(list *list_a)
 {
     int index_smaller_int = 0;
 
