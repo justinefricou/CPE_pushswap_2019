@@ -7,7 +7,6 @@
 
 #include "../include/pushswap.h"
 
-// Rotates the list toward the beginning, the first element will become the last
 void pushswap_ra(int *list_a, int length_list_a)
 {
     int nbr = 0;
@@ -21,7 +20,6 @@ void pushswap_ra(int *list_a, int length_list_a)
     }
 }
 
-// Takes the first element from l_a and moves it to the first position on l_b
 void pushswap_pb(int *list_a, int *list_b, int *length_a, int *length_b)
 {
     write(1, "pb ", 3);
@@ -36,7 +34,6 @@ void pushswap_pb(int *list_a, int *list_b, int *length_a, int *length_b)
     }
 }
 
-// Takes the first element from l_b and moves it to the first position on l_a
 void pushswap_pa(int *list_a, int *list_b, int *length_a, int *length_b)
 {
     write(1, "pa", 2);
