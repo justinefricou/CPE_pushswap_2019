@@ -30,4 +30,7 @@ void pushswap_ra(int *list_a, int length_list_a);
 void pushswap_pb(int *list_a, int *list_b, int *length_a, int *length_b);
 void pushswap_pa(int *list_a, int *list_b, int *length_a, int *length_b);
 
+void add_to_buffer(char *buffer, char *str);
+int my_strlen(char *str);
+
 #endif //DEF_PUSHSWAP
