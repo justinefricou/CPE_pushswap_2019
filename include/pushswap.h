@@ -11,6 +11,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+typedef struct list {
+    int *array;
+    int length;
+} list;
+
 int detect_errors(int argc, char **argv);
 int is_int(char *str);
 int is_sign(char c);
