@@ -9,17 +9,20 @@
 
 int main(int argc, char **argv)
 {
-    int *list_a = NULL;
-    int *list_b = NULL;
+    int *list_1 = NULL;
+    int *list_2 = NULL;
+    list list_a, list_b;
 
     if (detect_errors(argc, argv))
         return (84);
-    if (get_list_a(&list_a, argc, argv) == 84)
+    if (get_list_a(&list_1, argc, argv) == 84)
         return (84);
-    if (get_list_b(&list_b, argc) == 84)
+    if (get_list_b(&list_2, argc) == 84)
         return (84);
-    display_sorting(list_a, list_b, argc - 1);
-    free(list_a);
-    free(list_b);
+    list_a.array = list_1;
+    list_a.length = argc - 1;
+    list_b.array = list_2;
+    list_b.length = 0;
+    display_sorting(&list_a, &list_b);
     return (0);
 }

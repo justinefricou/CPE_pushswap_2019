@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** get_list.c
 ** File description:
-** pushswap : creates a 2d in array from argv
+** pushswap (bonus) : creates a 2d in array from argv
 */
 
 #include "../include/pushswap.h"

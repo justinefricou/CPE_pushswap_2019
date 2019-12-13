@@ -2,27 +2,31 @@
 ** EPITECH PROJECT, 2019
 ** display_sorting.c
 ** File description:
-** pushswap : sorts the list and displays the operation used at every step
+** pushswap (bonus) : sorts the list and displays the operation used.
 */
 
 #include "../include/pushswap.h"
 
-int display_sorting(int *list_a, int *list_b, int length_a)
+int display_sorting(list *list_a, list *list_b)
 {
-    int length_b = 0;
+    char buffer[1000] = {0};
 
-    if (is_sorted(list_a, length_a)) {
+    if (is_sorted(list_a->array, list_a->length)) {
         write(1, "\n", 1);
         return (0);
     }
-    for ( ; length_a > 0; )
-        remove_smaller_int(list_a, list_b, &length_a, &length_b);
-    for ( ; length_b > 0; ) {
-        pushswap_pa(list_a, list_b, &length_a, &length_b);
-        if (length_b > 0)
-            write(1, " ", 1);
+    for ( ; list_a->length > 0; )
+        remove_smaller_int(list_a, list_b, buffer);
+    for ( ; list_b->length > 0; ) {
+        pushswap_pa(list_a, list_b);
+        add_to_buffer(buffer, "pa");
+        if (list_b->length > 0)
+            add_to_buffer(buffer, " ");
     }
-    write(1, "\n", 1);
+    add_to_buffer(buffer, "\n");
+    display_buffer(buffer);
+    free(list_a->array);
+    free(list_b->array);
     return (0);
 }
 
@@ -35,23 +39,34 @@ int is_sorted(int *list, int length_list)
     return (1);
 }
 
-void remove_smaller_int(int *list_a, int *list_b, int *length_a, int *length_b)
+void remove_smaller_int(list *list_a, list *list_b, char *buffer)
 {
     int index_smaller_int = 0;
 
-    index_smaller_int = get_index_smaller_int(list_a, *length_a);
-    for (int i = 0; i < index_smaller_int; i++)
-        pushswap_ra(list_a, *length_a);
-    pushswap_pb(list_a, list_b, length_a, length_b);
+    index_smaller_int = get_index_smaller_int(list_a);
+    for (int i = 0; i < index_smaller_int; i++) {
+        pushswap_ra(list_a);
+        add_to_buffer(buffer, "ra ");
+    }
+    pushswap_pb(list_a, list_b);
+    add_to_buffer(buffer, "pb ");
 }
 
-int get_index_smaller_int(int *list_a, int length_a)
+int get_index_smaller_int(list *list_a)
 {
     int index_smaller_int = 0;
 
-    for (int i = 1; i < length_a; i++) {
-        if (list_a[index_smaller_int] > list_a[i])
+    for (int i = 1; i < list_a->length; i++) {
+        if ((list_a->array)[index_smaller_int] > (list_a->array)[i])
             index_smaller_int = i;
     }
     return (index_smaller_int);
+}
+
+void display_buffer(char *buffer)
+{
+    int length = 0;
+
+    length = my_strlen(buffer);
+    write(1, buffer, length);
 }

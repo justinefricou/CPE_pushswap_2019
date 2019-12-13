@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** error_detection.c
 ** File description:
-** pushswap : functions to detect errors
+** pushswap (bonus) : functions to detect errors
 */
 
 #include "../include/pushswap.h"
