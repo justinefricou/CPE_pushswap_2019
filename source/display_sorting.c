@@ -55,11 +55,3 @@ int get_index_smaller_int(int *list_a, int length_a)
     }
     return (index_smaller_int);
 }
-
-void display_buffer(char *buffer)
-{
-    int length = 0;
-
-    length = my_strlen(buffer);
-    write(1, buffer, length);
-}
