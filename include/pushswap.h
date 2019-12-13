@@ -24,6 +24,7 @@ int display_sorting(int *list_a, int *list_b, int length_a);
 int is_sorted(int *list, int length_list);
 void remove_smaller_int(int *list_a, int *list_b, int *length_a, int *length_b);
 int get_index_smaller_int(int *list_a, int length_a);
+void display_buffer(char *buffer);
 
 void pushswap_ra(int *list_a, int length_list_a);
 void pushswap_pb(int *list_a, int *list_b, int *length_a, int *length_b);
