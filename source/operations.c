@@ -44,28 +44,3 @@ void pushswap_pa(list *list_a, list *list_b)
         (list_a->length)++;
     }
 }
-
-void add_to_buffer(char *buffer, char *str)
-{
-    int length_buff = 0;
-    int length_str = 0;
-
-    length_buff = my_strlen(buffer);
-    length_str = my_strlen(str);
-    if (length_buff + length_str >= 1000) {
-        write(1, buffer, length_buff);
-        for (int i = 0; i < 1000; i++)
-            buffer[i] = 0;
-    } else {
-        for (int i = 0; str[i] != 0; i++)
-            buffer[i + length_buff] = str[i];
-    }
-}
-
-int my_strlen(char *str)
-{
-    int length = 0;
-
-    for ( ; str[length] != 0; length++);
-    return (length);
-}

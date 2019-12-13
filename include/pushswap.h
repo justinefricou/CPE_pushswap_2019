@@ -29,15 +29,13 @@ void initialize_list(list int_list, int *array, int length);
 
 int display_sorting(list *list_a, list *list_b);
 int is_sorted(int *list, int length_list);
-void remove_smaller_int(list *list_a, list *list_b, char *buffer);
+void remove_smaller_int(list *list_a, list *list_b, char *buffer, int *length);
 int get_index_smaller_int(list *list_a);
-void display_buffer(char *buffer);
 
 void pushswap_ra(list *list_a);
 void pushswap_pb(list *list_a, list *list_b);
 void pushswap_pa(list *list_a, list *list_b);
 
-void add_to_buffer(char *buffer, char *str);
-int my_strlen(char *str);
+void add_to_buffer(char *buffer, char *str, int *length_buffer);
 
 #endif //DEF_PUSHSWAP
