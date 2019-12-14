@@ -7,7 +7,7 @@
 
 #include "../include/pushswap.h"
 
-void pushswap_ra(int *list_a, int length_list_a)
+void pushswap_ra(float *list_a, int length_list_a)
 {
     int nbr = 0;
 
@@ -20,7 +20,7 @@ void pushswap_ra(int *list_a, int length_list_a)
     }
 }
 
-void pushswap_pb(int *list_a, int *list_b, int *length_a, int *length_b)
+void pushswap_pb(float *list_a, float *list_b, int *length_a, int *length_b)
 {
     write(1, "pb ", 3);
     if (*length_a > 0) {
@@ -34,7 +34,7 @@ void pushswap_pb(int *list_a, int *list_b, int *length_a, int *length_b)
     }
 }
 
-void pushswap_pa(int *list_a, int *list_b, int *length_a, int *length_b)
+void pushswap_pa(float *list_a, float *list_b, int *length_a, int *length_b)
 {
     write(1, "pa", 2);
     if (*length_b > 0) {

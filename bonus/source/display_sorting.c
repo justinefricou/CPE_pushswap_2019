@@ -7,7 +7,7 @@
 
 #include "../include/pushswap.h"
 
-int display_sorting(int *list_a, int *list_b, int length_a)
+int display_sorting(float *list_a, float *list_b, int length_a)
 {
     int length_b = 0;
 
@@ -16,7 +16,7 @@ int display_sorting(int *list_a, int *list_b, int length_a)
         return (0);
     }
     for ( ; length_a > 0; )
-        remove_smaller_int(list_a, list_b, &length_a, &length_b);
+        remove_smallest_nbr(list_a, list_b, &length_a, &length_b);
     for ( ; length_b > 0; ) {
         pushswap_pa(list_a, list_b, &length_a, &length_b);
         if (length_b > 0)
@@ -26,7 +26,7 @@ int display_sorting(int *list_a, int *list_b, int length_a)
     return (0);
 }
 
-int is_sorted(int *list, int length_list)
+int is_sorted(float *list, int length_list)
 {
     for (int i = 0; i < length_list - 1; i++) {
         if (list[i] > list[i + 1])
@@ -35,17 +35,17 @@ int is_sorted(int *list, int length_list)
     return (1);
 }
 
-void remove_smaller_int(int *list_a, int *list_b, int *length_a, int *length_b)
+void remove_smallest_nbr(float *list_a, float *list_b, int *len_a, int *len_b)
 {
     int index_smaller_int = 0;
 
-    index_smaller_int = get_index_smaller_int(list_a, *length_a);
+    index_smaller_int = get_index_smallest_nbr(list_a, *len_a);
     for (int i = 0; i < index_smaller_int; i++)
-        pushswap_ra(list_a, *length_a);
-    pushswap_pb(list_a, list_b, length_a, length_b);
+        pushswap_ra(list_a, *len_a);
+    pushswap_pb(list_a, list_b, len_a, len_b);
 }
 
-int get_index_smaller_int(int *list_a, int length_a)
+int get_index_smallest_nbr(float *list_a, int length_a)
 {
     int index_smaller_int = 0;
 

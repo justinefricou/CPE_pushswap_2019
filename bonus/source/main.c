@@ -9,8 +9,8 @@
 
 int main(int argc, char **argv)
 {
-    int *list_a = NULL;
-    int *list_b = NULL;
+    float *list_a = NULL;
+    float *list_b = NULL;
 
     if (argc == 2 && my_strcmp(argv[1], "-h") == 0) {
         display_usage();
