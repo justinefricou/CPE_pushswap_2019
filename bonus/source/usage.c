@@ -21,7 +21,7 @@ void display_usage(void)
     write(1, "\nUSAGE\n", 7);
     write(1, "\t./push_swap nb1 [ nb2 [ nb3 ... ] ]\n\n", 38);
     write(1, "DESCRIPTION\n", 12);
-    write(1, "\tThe program takes numbers as parameters and sorts\n", 52);
+    write(1, "\tThe program takes integers as parameters and sorts\n", 52);
     write(1, "\tthem, while printing the series of operations used.\n\n", 54);
     write(1, "OPERATIONS\n", 11);
     write(1, "\tra\tthe first element of the list will become the last\n", 55);
