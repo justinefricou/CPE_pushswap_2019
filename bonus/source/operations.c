@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** operations.c
 ** File description:
-** pushswap : operations sa and ra needed in the algorithm
+** pushswap : operations ra, pb and pa needed in the algorithm
 */
 
 #include "../include/pushswap.h"
