@@ -6,11 +6,11 @@
 */
 
 #include <criterion/criterion.h>
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 Test(get_list_b, one_number)
 {
-    int *list_b = NULL;
+    float *list_b = NULL;
 
     cr_expect_eq(get_list_b(&list_b, 1), 0);
     for (int i = 0; i < 1; i++)
@@ -20,7 +20,7 @@ Test(get_list_b, one_number)
 
 Test(get_list_b, several_numbers)
 {
-    int *list_b = NULL;
+    float *list_b = NULL;
 
     cr_expect_eq(get_list_b(&list_b, 2), 0);
     for (int i = 0; i < 2; i++)

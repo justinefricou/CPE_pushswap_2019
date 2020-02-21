@@ -5,7 +5,7 @@
 ** pushswap : functions to detect errors
 */
 
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 int detect_errors(int argc, char **argv)
 {

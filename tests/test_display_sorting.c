@@ -7,7 +7,7 @@
 
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 Test(display_sorting, one_number, .init=cr_redirect_stdout)
 {

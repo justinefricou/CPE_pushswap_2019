@@ -6,11 +6,11 @@
 */
 
 #include <criterion/criterion.h>
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 Test(get_list_a, one_number)
 {
-    int *list = NULL;
+    float *list = NULL;
     char **argv = NULL;
     char *arg0 = "pushswap";
     char *arg1 = "-00650300";
@@ -20,14 +20,13 @@ Test(get_list_a, one_number)
     argv[1] = arg1;
     get_list_a(&list, 2, argv);
     cr_expect_eq(list[0], -650300);
-    cr_expect_null(list[1]);
     free(list);
     free(argv);
 }
 
 Test(get_list_a, several_numbers)
 {
-    int *list = NULL;
+    float *list = NULL;
     char **argv = NULL;
     char *arg0 = "pushswap";
     char *arg1 = "-548";
@@ -42,7 +41,6 @@ Test(get_list_a, several_numbers)
     cr_expect_eq(list[0], -548);
     cr_expect_eq(list[1], 0);
     cr_expect_eq(list[2], 685465);
-    cr_expect_null(list[3]);
     free(list);
     free(argv);
 }

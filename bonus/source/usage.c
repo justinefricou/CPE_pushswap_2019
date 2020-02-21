@@ -5,7 +5,7 @@
 ** pushswap (bonus) : fonctions used to display usage
 */
 
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 int my_strcmp(char *str1, char *str2)
 {

@@ -7,7 +7,7 @@
 
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 Test(pushswap_ra, several_nbrs_in_list, .init=cr_redirect_stdout)
 {

@@ -28,18 +28,20 @@ SRC_TESTS	=	source/error_detection.c\
 				tests/test_get_list_b.c\
 				tests/test_display_sorting.c\
 				tests/test_is_sorted.c\
-				tests/test_remove_smaller_int.c\
-				tests/test_get_index_smaller_int.c\
+				tests/test_remove_smallest_nbr.c\
+				tests/test_get_index_smallest_nbr.c\
 				tests/test_pushswap_ra.c\
 				tests/test_pushswap_pb.c\
 				tests/test_pushswap_pa.c
 
 OBJ_TESTS	=	$(SRC_TESTS:.c=.o)
 
+CFLAGS	+=	-Wall -Wextra -Iinclude
+
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-			gcc -o $(NAME) $(OBJ)
+			gcc -o $(NAME) $(OBJ) $(CFLAGS)
 
 clean:
 		rm -f $(OBJ)
@@ -56,5 +58,5 @@ re:	fclean all
 tests_run:	$(SRC_TESTS)
 			rm -f *.gcno
 			rm -f *.gcda
-			gcc -o $(NAME_TESTS) $(SRC_TESTS) --coverage -lcriterion
+			gcc -o $(NAME_TESTS) $(SRC_TESTS) $(CFLAGS) --coverage -lcriterion
 			./$(NAME_TESTS)

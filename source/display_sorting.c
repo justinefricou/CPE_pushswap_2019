@@ -5,7 +5,7 @@
 ** pushswap : sorts the list and displays the operation used at every step
 */
 
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 int display_sorting(int *list_a, int *list_b, int length_a)
 {

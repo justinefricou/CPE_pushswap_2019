@@ -6,7 +6,7 @@
 */
 
 #include <criterion/criterion.h>
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 Test(detect_errors, no_errors)
 {

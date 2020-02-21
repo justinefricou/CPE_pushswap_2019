@@ -7,12 +7,12 @@
 
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 Test(display_sorting, one_number, .init=cr_redirect_stdout)
 {
-    int list_a[1] = {-65};
-    int list_b[1] = {0};
+    float list_a[1] = {-65};
+    float list_b[1] = {0};
 
     cr_expect_eq(display_sorting(list_a, list_b, 1), 0);
     cr_expect_arr_eq(list_a, list_a, 1);
@@ -21,12 +21,12 @@ Test(display_sorting, one_number, .init=cr_redirect_stdout)
 
 Test(display_sorting, sorted_lists, .init=cr_redirect_stdout)
 {
-    int actual1_a[2] = {-65, 32};
-    int actual2_a[3] = {-6, 0, 987};
-    int actual3_a[5] = {-5, -5, 65, 65, 785};
-    int actual1_b[2] = {0};
-    int actual2_b[3] = {0};
-    int actual3_b[5] = {0};
+    float actual1_a[2] = {-65, 32};
+    float actual2_a[3] = {-6, 0, 987};
+    float actual3_a[5] = {-5, -5, 65, 65, 785};
+    float actual1_b[2] = {0};
+    float actual2_b[3] = {0};
+    float actual3_b[5] = {0};
 
     cr_expect_eq(display_sorting(actual1_a, actual1_b, 2), 0);
     cr_expect_eq(display_sorting(actual2_a, actual2_b, 3), 0);
@@ -39,13 +39,13 @@ Test(display_sorting, sorted_lists, .init=cr_redirect_stdout)
 
 Test(display_sorting, not_sorted_small_list, .init=cr_redirect_stdout)
 {
-    int actual1[2] = {32, -65};
-    int actual2[3] = {0, -6, 987};
-    int actual3[3] = {0, 987, -6};
-    int actual1_b[2] = {0};
-    int actual2_b[3] = {0};
-    int expected1[2] = {-65, 32};
-    int expected2[3] = {-6, 0, 987};
+    float actual1[2] = {32, -65};
+    float actual2[3] = {0, -6, 987};
+    float actual3[3] = {0, 987, -6};
+    float actual1_b[2] = {0};
+    float actual2_b[3] = {0};
+    float expected1[2] = {-65, 32};
+    float expected2[3] = {-6, 0, 987};
 
     cr_expect_eq(display_sorting(actual1, actual1_b, 2), 0);
     cr_expect_eq(display_sorting(actual2, actual2_b, 3), 0);
@@ -59,9 +59,9 @@ Test(display_sorting, not_sorted_small_list, .init=cr_redirect_stdout)
 
 Test(display_sorting, not_sorted_list, .init=cr_redirect_stdout)
 {
-    int actual2_a[5] = {-5, 785, 65, 65, -5};
-    int actual2_b[5] = {0};
-    int expected2[5] = {-5, -5, 65, 65, 785};
+    float actual2_a[5] = {-5, 785, 65, 65, -5};
+    float actual2_b[5] = {0};
+    float expected2[5] = {-5, -5, 65, 65, 785};
 
     cr_expect_eq(display_sorting(actual2_a, actual2_b, 5), 0);
     cr_expect_arr_eq(actual2_a, expected2, 5);

@@ -5,7 +5,7 @@
 ** pushswap (bonus) : creates a 2d in array from argv
 */
 
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 int get_list_a(float **list_a, int argc, char **argv)
 {

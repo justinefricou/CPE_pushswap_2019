@@ -6,7 +6,7 @@
 */
 
 #include <criterion/criterion.h>
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 Test(get_list_b, one_number)
 {

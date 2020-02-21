@@ -5,7 +5,7 @@
 ** pushswap : operations ra, pb and pa needed in the algorithm
 */
 
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 void pushswap_ra(int *list_a, int length_list_a)
 {

@@ -5,7 +5,7 @@
 ** pushswap : main function
 */
 
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 int main(int argc, char **argv)
 {

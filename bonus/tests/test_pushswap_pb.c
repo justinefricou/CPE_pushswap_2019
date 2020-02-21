@@ -7,14 +7,14 @@
 
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
-#include "../include/pushswap.h"
+#include "pushswap.h"
 
 Test(pushswap_pb, empty_list_b, .init=cr_redirect_stdout)
 {
-    int list_a[5] = {4, 5, 4, 8, 6};
-    int list_b[5] = {0, 0, 0, 0, 0};
-    int expected_a[5] = {5, 4, 8, 6, 6};
-    int expected_b[5] = {4, 0, 0, 0, 0};
+    float list_a[5] = {4, 5, 4, 8, 6};
+    float list_b[5] = {0, 0, 0, 0, 0};
+    float expected_a[5] = {5, 4, 8, 6, 6};
+    float expected_b[5] = {4, 0, 0, 0, 0};
     int length_a = 5;
     int length_b = 0;
 
@@ -28,8 +28,8 @@ Test(pushswap_pb, empty_list_b, .init=cr_redirect_stdout)
 
 Test(pushswap_pb, empty_list_a, .init=cr_redirect_stdout)
 {
-    int list_a[5] = {0, 0, 0, 0, 0};
-    int list_b[5] = {4, 5, 4, 8, 6};
+    float list_a[5] = {0, 0, 0, 0, 0};
+    float list_b[5] = {4, 5, 4, 8, 6};
     int length_a = 0;
     int length_b = 5;
 
@@ -43,10 +43,10 @@ Test(pushswap_pb, empty_list_a, .init=cr_redirect_stdout)
 
 Test(pushswap_pb, normal_case, .init=cr_redirect_stdout)
 {
-    int list_a[5] = {4, 5, 4, 8, 8};
-    int list_b[5] = {-2, 0, 0, 0, 0};
-    int expected_a[5] = {5, 4, 8, 8, 8};
-    int expected_b[5] = {4, -2, 0, 0, 0};
+    float list_a[5] = {4, 5, 4, 8, 8};
+    float list_b[5] = {-2, 0, 0, 0, 0};
+    float expected_a[5] = {5, 4, 8, 8, 8};
+    float expected_b[5] = {4, -2, 0, 0, 0};
     int length_a = 4;
     int length_b = 1;
 
